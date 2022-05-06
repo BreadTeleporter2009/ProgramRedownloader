@@ -42,6 +42,6 @@ elif choice==1:
     print("[█----------]")
     try:
         system("7zip.exe")
-        print("Finished installing \"7zip File Manager"")
+        print("Finished installing \"7zip File Manager\"")
     except:
         print("!ERROR! Unable to install 7zip")
