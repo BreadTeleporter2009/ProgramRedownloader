@@ -63,4 +63,5 @@ elif choice==1:
         getpass.getpass("")
     try:
         system("WinareoTweaker-1.33.0.0-setup.exe")
-    except ("!ERROR! Unable to install Winareo Tweaker")
+    except:
+        print("!ERROR! Unable to install Winareo Tweaker")
