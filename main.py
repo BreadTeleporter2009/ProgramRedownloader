@@ -1,5 +1,6 @@
 from os import system
 import requests
+import getpass
 def clear():
     system("cls")
 print("Welcome to program reinstaller version 0.1.")
@@ -28,7 +29,10 @@ elif choice==1:
     clear()
     print("Downloading...")
     print("[██--------]")
-
+    try:
+        url='https://winaero.com/downloads/winaerotweaker.zip'
+        r = requests.get(url, allow_redirects=True)
+        open('winareo.zip', 'wb').write(r.content)
     clear()
     print("Downloads finished.")
     print("Installing programs...")
@@ -38,6 +42,7 @@ elif choice==1:
         print("Finished installing \"Google Chrome\"")
     except:
         print("!ERROR! Unable to install Google Chrome.")
+    clear()
     print("Installing programs...")
     print("[█----------]")
     try:
@@ -45,3 +50,17 @@ elif choice==1:
         print("Finished installing \"7zip File Manager\"")
     except:
         print("!ERROR! Unable to install 7zip")
+    clear()
+    print("Installing programs...")
+    print("[██---------]")
+    try:
+        import zipfile
+        with zipfile.ZipFile(winareo.zip, 'r') as zip_ref:
+            zip_ref.extractall()
+        print("Zip Extraction Complete. Installing...")
+    except:
+        print("Unable to extract winareo.zip, Please extract it manualy and press \nENTER to continue.")
+        getpass.getpass("")
+    try:
+        system("WinareoTweaker-1.33.0.0-setup.exe")
+    except ("!ERROR! Unable to install Winareo Tweaker")
