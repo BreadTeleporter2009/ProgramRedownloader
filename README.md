@@ -2,4 +2,4 @@
 Simple python script to redownload programs on a new Windows install
 
 # Notes
-.net may be required.
+.NET may be required.
